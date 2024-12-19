@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <div className="min-h-screen bg-gray-300">
       <nav className="w-full p-6 flex justify-between items-center bg-transparent z-10 bg-gray-200">
-        <div className="text-gray-800 text-xl font-bold">Ms.Nduati</div>
+        <div className="text-gray-800 text-xl font-bold">Ms.Waka</div>
         <div className="flex space-x-6 font-serif">
           <a href="#" className="text-gray-800 hover:text-gray-600">HOME</a>
           <a href="#about" className="text-gray-800 hover:text-gray-600">ABOUT</a>
@@ -45,7 +45,7 @@ const Navigation = () => {
           <h1 className="text-6xl font-light mb-4">
             Hello, I'm a web Developer.
           </h1>
-          <p className="text-xl">My name is Ms.Nduati. I'm a full stack developer.</p>
+          <p className="text-xl">My name is Ms.Waka. I'm a full stack developer.</p>
           <button className="mt-8 px-6 py-2 border border-white hover:bg-white hover:text-gray-900 transition-colors">
             Hire Me
           </button>
