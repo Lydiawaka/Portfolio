@@ -46,7 +46,8 @@ const Navigation = () => {
             Hello, I'm a web Developer.
           </h1>
           <p className="text-xl">My name is Ms.Waka. I'm a full stack developer.</p>
-          <button className="mt-8 px-6 py-2 border border-white hover:bg-white hover:text-gray-900 transition-colors">
+          <button className="mt-8 px-6 py-2 border border-white hover:bg-white hover:text-gray-900 transition-colors"
+          onClick={() => window.open('https://www.fiverr.com/users/lydiawaka/seller_dashboard#!')} >
             Hire Me
           </button>
         </div>
