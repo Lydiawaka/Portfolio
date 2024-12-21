@@ -1,7 +1,9 @@
 import React from 'react';
 import image1 from '../../assets/image/background.jpeg';
 import image2 from '../../assets/image/comp.jpg';
-
+import image3 from '../../assets/image/poem.jpg';
+import image4 from '../../assets/image/furniture.jpg'
+import image5 from '../../assets/image/ecmmrce.jpg'
 
 const Navigation = () => {
 
@@ -14,6 +16,30 @@ const Navigation = () => {
     { name: 'GIT' },
     { name: 'NPM' }
   ];
+
+  const Projects =[
+    {
+      id: 1,
+      name: "FURNITURE",
+      img: image4,
+      link: 'https://furniture-rust-nine.vercel.app/',
+      code: 'https://github.com/Lydiawaka/Furniture'
+    },
+    {
+      id: 2,
+      name: "ECOMMERCE",
+      img: image5,
+      code: 'https://github.com/Lydiawaka/Shop',
+     
+    },
+    {
+      id: 3,
+      name: "STORIES",
+      img: image3,
+      link: 'https://poems-alpha.vercel.app/',
+      code: 'https://github.com/Lydiawaka/poems'
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-gray-300">
@@ -125,16 +151,17 @@ const Navigation = () => {
             MY RECENT PROJECTS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2, 3].map((project) => (
-              <div key={project} className="space-y-4">
+            {Projects.map((data) => (
+              <div key={data.id} className="space-y-4">
                 <img
-                  src={`/api/placeholder/600/400`}
-                  alt={`Project ${project}`}
+                  src={data.img}
+                  alt={`Project ${Projects}`}
                   className="w-full h-64 object-cover"
                 />
-                <h3 className="text-xl font-light">NAME OF THE PROJECT {project}</h3>
+                <h3 className="text-xl font-light"> {data.name}</h3>
                 <p className="text-gray-500 text-sm">Logo / Webdesign / CMS</p>
-                <button className="text-gray-600 hover:text-gray-900 flex items-center">
+                <button className="text-gray-900 bg-green-600 border-yellow-400 hover:bg-yellow-400 rounded-md" onClick={() => window.open(data.code)}>View Code</button>
+                <button className="text-gray-600 hover:text-gray-900 flex items-center" onClick={() => window.open(data.link)}>
                   VIEW MORE
                   <span className="ml-2">→</span>
                 </button>
