@@ -2,8 +2,13 @@ import React from 'react';
 import image1 from '../../assets/image/background.jpeg';
 import image2 from '../../assets/image/comp.jpg';
 import image3 from '../../assets/image/poem.jpg';
-import image4 from '../../assets/image/furniture.jpg'
-import image5 from '../../assets/image/ecmmrce.jpg'
+import image4 from '../../assets/image/furniture.jpg';
+import image5 from '../../assets/image/ecmmrce.jpg';
+import image6 from '../../assets/image/blog.jpg';
+import image7 from '../../assets/image/johns.jpg';
+import image8 from '../../assets/image/emily.jpg';
+import image9 from '../../assets/image/Anna.jpg';
+import { FaQuoteLeft } from "react-icons/fa";
 
 const Navigation = () => {
 
@@ -14,7 +19,8 @@ const Navigation = () => {
     { name: 'REACT' },
     { name: 'QUERY' },
     { name: 'GIT' },
-    { name: 'NPM' }
+    { name: 'NPM' },
+    { name: 'MERN'}
   ];
 
   const Projects =[
@@ -38,13 +44,37 @@ const Navigation = () => {
       img: image3,
       link: 'https://poems-alpha.vercel.app/',
       code: 'https://github.com/Lydiawaka/poems'
+    },
+    {
+      id: 4,
+      name: "BLOG",
+      img: image6,
+      link: 'https://essie-blogs.vercel.app/',
+      code: 'https://github.com/Lydiawaka/Essie-Blogs'
     }
   ]
 
+  const testimonials = [
+    {
+      quote: "Collaborating with this developer was truly a delight. Their technical expertise and meticulous attention to detail brought our vision to life.",
+      author: "Johnson J",
+      image: image7,
+    },
+    {
+      quote: "The MERN stack application he built for us has significantly improved our business operations.",
+      author: "Anna Johns",
+      image: image8
+    },
+    {
+      quote: "Partnering with Lydia exceeded all expectations. Her skill and precision turned our concept into a seamless reality.",
+      author: "Emily Joaquin",
+      image: image9
+    }
+  ];
   return (
     <div className="min-h-screen bg-gray-300">
       <nav className="w-full p-6 flex justify-between items-center bg-transparent z-10 bg-gray-200">
-        <div className="text-gray-800 text-xl font-bold">Ms.Waka</div>
+        <div className="text-gray-800 text-xl font-bold">Lydia Waka</div>
         <div className="flex space-x-6 font-serif">
           <a href="#" className="text-gray-800 hover:text-gray-600">HOME</a>
           <a href="#about" className="text-gray-800 hover:text-gray-600">ABOUT</a>
@@ -71,7 +101,7 @@ const Navigation = () => {
           <h1 className="text-6xl font-light mb-4">
             Hello, I'm a web Developer.
           </h1>
-          <p className="text-xl">My name is Ms.Waka. I'm a full stack developer.</p>
+          <p className="text-xl">My name is Lydia Waka. I'm a full stack developer.</p>
           <button className="mt-8 px-6 py-2 border border-white hover:bg-white hover:text-gray-900 transition-colors"
           onClick={() => window.open('https://www.fiverr.com/users/lydiawaka/seller_dashboard#!')} >
             Hire Me
@@ -156,13 +186,13 @@ const Navigation = () => {
                 <img
                   src={data.img}
                   alt={`Project ${Projects}`}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover rounded-xl"
                 />
                 <h3 className="text-xl font-light"> {data.name}</h3>
                 <p className="text-gray-500 text-sm">Logo / Webdesign / CMS</p>
-                <button className="text-gray-900 bg-green-600 border-yellow-400 hover:bg-yellow-400 rounded-md" onClick={() => window.open(data.code)}>View Code</button>
+                <button className="text-gray-900 bg-rose-400 border-yellow-400 hover:bg-yellow-400 rounded-md" onClick={() => window.open(data.code)}>View Code</button>
                 <button className="text-gray-600 hover:text-gray-900 flex items-center" onClick={() => window.open(data.link)}>
-                  VIEW MORE
+                  VIEW CITE
                   <span className="ml-2">→</span>
                 </button>
               </div>
@@ -170,6 +200,46 @@ const Navigation = () => {
           </div>
         </div>
       </section>
+
+      <div className="max-w-6xl mx-auto px-4 py-16">
+      <h1 className="text-3xl font-medium text-center mb-12">
+        What clients say about working with me
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index} 
+            className="p-6 rounded-lg border border-gray-200 flex flex-col"
+          >
+            {/* Quote Icon */}
+            <div className="text-4xl font-serif mb-4">
+              <FaQuoteLeft />
+            </div>
+
+            {/* Testimonial Text */}
+            <p className="text-gray-600 italic flex-grow mb-6">
+              {testimonial.quote}
+            </p>
+
+            {/* Author Info */}
+            <div className="flex items-center">
+              <img
+                src={testimonial.image}
+                alt={testimonial.author}
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h3 className="font-medium text-gray-900">
+                  {testimonial.author}
+                </h3>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
     </div>
   )
 };
